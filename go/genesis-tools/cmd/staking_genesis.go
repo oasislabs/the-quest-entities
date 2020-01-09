@@ -23,7 +23,7 @@ const (
 	cfgDefaultFundingAmount    = "staking.default_funding"
 	cfgDefaultSelfEscrowAmount = "staking.default_self_escrow"
 	cfgOutputPath              = "output-path"
-	defaultPrecisionConstant   = 1_000_000_000_000_000_000
+	defaultPrecisionConstant   = 1_000_000_000
 	defaultTotalSupply         = 10_000_000_000
 	defaultSelfEscrowAmount    = 100
 )
