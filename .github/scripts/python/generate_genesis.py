@@ -1,6 +1,7 @@
 import os
 import sys
 import subprocess
+from datetime import datetime
 
 
 def add_entities_from_directory(genesis_command, entity_dir, add_nodes):
@@ -34,10 +35,15 @@ def main():
     oasis_node_path = os.environ.get('OASIS_NODE_PATH', '/tmp/oasis-node')
     oasis_test_only = os.environ.get('OASIS_TEST_ONLY', 'false') == 'true'
 
+    timestamp = datetime.now().strftime('%Y-%m-%d-%s')
+    chain_id = 'quest-%s' % timestamp
+    if oasis_test_only:
+        chaind_id = 'test-%s' % timestamp
+
     genesis_command = [
         oasis_node_path, 'genesis', 'init',
         '--genesis.file', output_path,
-        '--chain.id', 'the-quest-test-2019-01-09',
+        '--chain.id', chain_id,
         '--staking', staking_path,
         '--epochtime.tendermint.interval', '200',
         '--consensus.tendermint.timeout_commit', '5s',
