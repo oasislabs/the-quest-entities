@@ -3,7 +3,6 @@ package stakinggenesis
 import (
 	"encoding/json"
 	"io/ioutil"
-	"path"
 
 	"github.com/oasislabs/oasis-core/go/common/crypto/signature"
 	"github.com/oasislabs/oasis-core/go/common/entity"
@@ -17,7 +16,7 @@ type GenesisOptions struct {
 	FaucetAmount              int64
 	TotalSupply               int64
 	PrecisionConstant         int64
-	EntitiesDirectoryPath     string
+	EntitiesDirectoryPaths    []string
 	ConsensusParametersPath   string
 	ConsensusParametersLoader func() staking.ConsensusParameters
 	DefaultFundingAmount      int64
@@ -34,10 +33,6 @@ type genesisCreator struct {
 // Create creates a staking ledger file to be used in a genesis
 // document. This handles proper accounting of token amounts.
 func Create(options GenesisOptions) (*staking.Genesis, error) {
-	if options.ConsensusParametersPath == "" {
-		options.ConsensusParametersPath = path.Join(options.EntitiesDirectoryPath, "consensus_params.json")
-	}
-
 	creator := genesisCreator{options: options}
 	return creator.create()
 }
@@ -49,28 +44,33 @@ func (g *genesisCreator) create() (*staking.Genesis, error) {
 	g.precisionConstant = quantity.NewQuantity()
 	_ = g.precisionConstant.FromInt64(g.options.PrecisionConstant)
 
+	logger.Debug("Setup total supply")
 	// Setup total supply
 	totalSupply := g.toStakingQuantity(g.options.TotalSupply)
 	g.genesis.TotalSupply = *totalSupply
 
+	logger.Debug("Loading Consensus Params")
 	// Setup Consensus Parameters
 	err := g.loadConsensusParameters()
 	if err != nil {
 		return nil, err
 	}
 
+	logger.Debug("Setting up the faucet")
 	// Setup Faucet
 	err = g.setupFaucet()
 	if err != nil {
 		return nil, err
 	}
 
+	logger.Debug("Loading all entitiy")
 	// TODO Add a way to load a custom ledger amount
 	// Load all entities and fund them
 	for _, ent := range g.options.Entities.All() {
 		g.setupEntity(ent, g.options.DefaultFundingAmount, g.options.DefaultSelfEscrowAmount)
 	}
 
+	logger.Debug("Calculate the common pool amount")
 	err = g.calculateCommonPool()
 	if err != nil {
 		return nil, err
