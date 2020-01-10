@@ -38,7 +38,7 @@ def main():
     timestamp = datetime.now().strftime('%Y-%m-%d-%s')
     chain_id = 'quest-%s' % timestamp
     if oasis_test_only:
-        chaind_id = 'test-%s' % timestamp
+        chain_id = 'test-%s' % timestamp
 
     genesis_command = [
         oasis_node_path, 'genesis', 'init',
