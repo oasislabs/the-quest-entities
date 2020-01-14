@@ -42,7 +42,7 @@ jobs:
           --output-path /tmp/staking.pre_prod.json
 
       - name: Download oasis-node
-        run: curl -Lo /tmp/oasis-node.tar.gz https://github.com/oasislabs/the-quest-entities/releases/download/DO_NOT_USE/oasis-node-linux-amd64.tar.gz
+        run: curl -Lo /tmp/oasis-node.tar.gz https://github.com/oasislabs/oasis-core/releases/download/v20.0/oasis-node_20.0_linux_amd64.tar.gz
 
       - name: Unpack oasis-node
         run: cd /tmp && tar xvf oasis-node.tar.gz && chmod +x /tmp/oasis-node
