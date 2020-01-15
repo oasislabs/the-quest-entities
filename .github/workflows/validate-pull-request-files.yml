@@ -36,7 +36,7 @@ jobs:
           --staking.entities_dir /tmp/unpack
           --staking.consensus_params .github/pre_prod_consensus_params.json
           --log.level debug
-          --staking.faucet.address AAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBB=
+          --staking.faucet.address ZWVxEX66b1wnY62wx5lp7bR9rF8+2tCxgmcwFs7Kg1s=
           --staking.faucet.amount 2000000000
           --staking.default_self_escrow 10000
           --output-path /tmp/staking.pre_prod.json
