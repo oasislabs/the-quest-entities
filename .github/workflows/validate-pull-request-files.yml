@@ -46,7 +46,7 @@ jobs:
 
       # Temporarily use a local oasis-node release
       - name: Download oasis-node
-        run: curl -Lo /tmp/oasis_core_linux_amd64.tar.gz https://github.com/oasislabs/oasis-core/releases/download/v20.3.2/oasis_core_linux_amd64.tar.gz
+        run: curl -Lo /tmp/oasis_core_linux_amd64.tar.gz https://github.com/oasislabs/the-quest-entities/releases/download/DO_NOT_USE/oasis_core_linux_amd64.tar.gz
 
       - name: Unpack oasis-node
         run: cd /tmp && tar xvf oasis_core_linux_amd64.tar.gz && chmod +x /tmp/oasis-node
