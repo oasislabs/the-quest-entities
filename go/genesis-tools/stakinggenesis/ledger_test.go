@@ -8,11 +8,11 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/oasislabs/oasis-core/go/common/crypto/signature"
-	fileSigner "github.com/oasislabs/oasis-core/go/common/crypto/signature/signers/file"
-	"github.com/oasislabs/oasis-core/go/common/entity"
-	staking "github.com/oasislabs/oasis-core/go/staking/api"
 	"github.com/oasislabs/the-quest-entities/go/genesis-tools/stakinggenesis"
+	"github.com/oasisprotocol/oasis-core/go/common/crypto/signature"
+	fileSigner "github.com/oasisprotocol/oasis-core/go/common/crypto/signature/signers/file"
+	"github.com/oasisprotocol/oasis-core/go/common/entity"
+	staking "github.com/oasisprotocol/oasis-core/go/staking/api"
 )
 
 type fakeEntities struct {
@@ -45,7 +45,13 @@ func (e *fakeEntities) generateEntity() (*entity.Entity, error) {
 		return nil, err
 	}
 	defer os.RemoveAll(dir)
-	signerFactory := fileSigner.NewFactory(dir, signature.SignerEntity)
+
+	signerFactory, err := fileSigner.NewFactory(dir, signature.SignerEntity)
+
+	if err != nil {
+		return nil, err
+	}
+
 	ent, _, err := entity.Generate(dir, signerFactory, &entity.Entity{
 		AllowEntitySignedNodes: false,
 	})

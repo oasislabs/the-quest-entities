@@ -41,11 +41,15 @@ jobs:
           --staking.default_self_escrow 10000
           --output-path /tmp/staking.pre_prod.json
 
+      #- name: Download oasis-node
+      #  run: curl -Lo /tmp/oasis-node.tar.gz https://github.com/oasislabs/oasis-core/releases/download/v20.3.2/oasis_core_linux_amd64.tar.gz
+
+      # Temporarily use a local oasis-node release
       - name: Download oasis-node
-        run: curl -Lo /tmp/oasis-node.tar.gz https://github.com/oasislabs/oasis-core/releases/download/v20.0/oasis-node_20.0_linux_amd64.tar.gz
+        run: curl -Lo /tmp/oasis_core_linux_amd64.tar.gz https://github.com/oasislabs/oasis-core/releases/download/v20.3.2/oasis_core_linux_amd64.tar.gz
 
       - name: Unpack oasis-node
-        run: cd /tmp && tar xvf oasis-node.tar.gz && chmod +x /tmp/oasis-node
+        run: cd /tmp && tar xvf oasis_core_linux_amd64.tar.gz && chmod +x /tmp/oasis-node
 
       - name: Generate a "pre-production" genesis document
         run: GENESIS_OUTPUT_PATH=/tmp/genesis.pre_prod.json STAKING_GENESIS_PATH=/tmp/staking.pre_prod.json python3 .github/scripts/python/generate_genesis.py /tmp/unpack

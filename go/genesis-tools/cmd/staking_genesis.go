@@ -9,7 +9,7 @@ import (
 	flag "github.com/spf13/pflag"
 	"github.com/spf13/viper"
 
-	nodeCmdCommon "github.com/oasislabs/oasis-core/go/oasis-node/cmd/common"
+	nodeCmdCommon "github.com/oasisprotocol/oasis-core/go/oasis-node/cmd/common"
 	"github.com/oasislabs/the-quest-entities/go/genesis-tools/stakinggenesis"
 )
 
