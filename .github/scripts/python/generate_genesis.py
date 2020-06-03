@@ -71,7 +71,7 @@ def main():
     print("Pretty printing genesis")
     # Pretty print genesis json
     genesis = json.load(open(output_path, 'r'))
-    json.dump(open(output_path, 'w'), indent=2, sort_keys=True)
+    json.dump(genesis, open(output_path, 'w'), indent=2, sort_keys=True)
 
 
 if __name__ == '__main__':
