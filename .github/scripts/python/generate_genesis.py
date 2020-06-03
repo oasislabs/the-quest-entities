@@ -45,14 +45,16 @@ def main():
         '--genesis.file', output_path,
         '--chain.id', chain_id,
         '--staking', staking_path,
-        '--epochtime.tendermint.interval', '200',
+        '--epochtime.tendermint.interval', '600',
         '--consensus.tendermint.timeout_commit', '5s',
         '--consensus.tendermint.empty_block_interval', '0s',
         '--consensus.tendermint.max_tx_size', '32kb',
         '--consensus.backend', 'tendermint',
+        '--consensus.max_evidence_age_blocks', '100000',
+        '--consensus.max_evidence_age_time', '172800000000000',
         '--scheduler.max_validators', '100',
         '--scheduler.max_validators_per_entity', '1',
-        '--scheduler.min_validators', '3',
+        '--scheduler.min_validators', '30',
     ]
 
     add_entities_from_directory(
