@@ -55,7 +55,7 @@ def main():
         '--consensus.backend', 'tendermint',
         '--scheduler.max_validators', '100',
         '--scheduler.max_validators_per_entity', '1',
-        '--scheduler.min_validators', '30',
+        '--scheduler.min_validators', '10',
     ]
 
     add_entities_from_directory(
