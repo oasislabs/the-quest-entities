@@ -34,7 +34,7 @@ jobs:
         run: >-
           /tmp/genesis-tools staking_genesis
           --staking.entities_dir /tmp/unpack
-          --staking.consensus_params .github/pre_prod_consensus_params.json
+          --staking.params .github/pre_prod_staking_params.json
           --log.level debug
           --staking.faucet.address ZWVxEX66b1wnY62wx5lp7bR9rF8+2tCxgmcwFs7Kg1s=
           --staking.faucet.amount 2000000000
@@ -71,7 +71,7 @@ jobs:
           /tmp/genesis-tools staking_genesis
           --staking.entities_dir /tmp/unpack
           --staking.entities_dir /tmp/test_only_unpack
-          --staking.consensus_params .github/test_only_consensus_params.json
+          --staking.params .github/test_only_staking_params.json
           --log.level debug
           --staking.faucet.address uMcicpJEWJxqNSQRTaLeHsQrooxtVXv70sqmYPP2R9s=
           --staking.faucet.amount 2000000000
