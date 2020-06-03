@@ -50,7 +50,7 @@ def main():
         '--consensus.tendermint.empty_block_interval', '0s',
         '--consensus.tendermint.max_tx_size', '32kb',
         '--consensus.tendermint.max_evidence_age_blocks', '100000',
-        '--consensus.tendermint.max_evidence_age_time', '172800000000000',
+        '--consensus.tendermint.max_evidence_age_time', '172800000000000ns',
         '--consensus.backend', 'tendermint',
         '--scheduler.max_validators', '100',
         '--scheduler.max_validators_per_entity', '1',
