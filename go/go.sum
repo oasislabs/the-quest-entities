@@ -509,6 +509,8 @@ github.com/oasisprotocol/ed25519 v0.0.0-20200528083105-55566edd6df0/go.mod h1:IZ
 github.com/oasisprotocol/oasis-core v0.0.0-20200602155041-d0a8e24f1a02 h1:IHT8sd8Ty80UW1Q1EgLklKjw0HN9U53xytz0Z2qJGmI=
 github.com/oasisprotocol/oasis-core/go v0.0.0-20200602155041-d0a8e24f1a02 h1:o2Y1mis6QlMNgI0pTlmoOd17Cg8f4yoW0XAT3E2CwQg=
 github.com/oasisprotocol/oasis-core/go v0.0.0-20200602155041-d0a8e24f1a02/go.mod h1:MMukwyVxq9VElaAAE7A6TfJN5nnT5DxcZFUGgSDFCeM=
+github.com/oasisprotocol/oasis-core/go v0.0.0-20200603183914-0a2bffe14bd2 h1:KYNA9SpI1fMPGH5+yzPI2LvzBZz9RDvVb4qLe+0L6HI=
+github.com/oasisprotocol/oasis-core/go v0.0.0-20200603183914-0a2bffe14bd2/go.mod h1:h9hAwLpyEwlWd+5k89l2/hJqHVMVZ28DYGHZE0N4oJ0=
 github.com/oklog/oklog v0.3.2/go.mod h1:FCV+B7mhrz4o+ueLpx+KqkyXRGMWOYEvfiXtdGtbWGs=
 github.com/oklog/run v1.0.0/go.mod h1:dlhp/R75TPv97u0XWUtDeV/lRKWPKSdTuV0TZvrmrQA=
 github.com/oklog/ulid v1.3.1/go.mod h1:CirwcVhetQ6Lv90oh/F+FBtV6XMibvdAFo93nm5qn4U=
@@ -654,6 +656,7 @@ github.com/zondax/ledger-go v0.11.0/go.mod h1:NI6JDs8VWwgh+9Bf1vPZMm9Xufp2Q7Iwm2
 github.com/zondax/ledger-oasis-go v0.3.0/go.mod h1:czCs1jEu/4KYz3mYgALCedjgKxaFygAQxJ1di+3hHoI=
 gitlab.com/yawning/bsaes.git v0.0.0-20190805113838-0a714cd429ec/go.mod h1:BZ1RAoRPbCxum9Grlv5aeksu2H8BiKehBYooU2LFiOQ=
 gitlab.com/yawning/dynlib.git v0.0.0-20190911075527-1e6ab3739fd8/go.mod h1:U41r+zgpFRTlkSzMhBjUqbupvVBafgokFFkKn0j+874=
+gitlab.com/yawning/dynlib.git v0.0.0-20200603163025-35fe007b0761/go.mod h1:U41r+zgpFRTlkSzMhBjUqbupvVBafgokFFkKn0j+874=
 gitlab.com/yawning/slice.git v0.0.0-20190714152416-bc4ae2510529/go.mod h1:sgaKGjNNjAAVrZvQQhE3oYIbnFZVaCBE2T7PmbpKJ4U=
 go.etcd.io/bbolt v1.3.2/go.mod h1:IbVyRI1SCnLcuJnV2u8VeU0CEYM7e686BmAb1XKL+uU=
 go.etcd.io/bbolt v1.3.3/go.mod h1:IbVyRI1SCnLcuJnV2u8VeU0CEYM7e686BmAb1XKL+uU=

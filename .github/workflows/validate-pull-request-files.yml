@@ -46,10 +46,13 @@ jobs:
 
       # Temporarily use a local oasis-node release
       - name: Download oasis-node
-        run: curl -Lo /tmp/oasis_core_linux_amd64.tar.gz https://github.com/oasislabs/the-quest-entities/releases/download/DO_NOT_USE/oasis_core_linux_amd64.tar.gz
+        run: curl -Lo /tmp/oasis-node https://buildkite.com/organizations/oasisprotocol/pipelines/oasis-core-ci/builds/54/jobs/25dafa27-a752-4224-a430-81606fe31c24/artifacts/6fcd63e6-100e-4388-9951-3b50703ef477
 
-      - name: Unpack oasis-node
-        run: cd /tmp && tar xvf oasis_core_linux_amd64.tar.gz && chmod +x /tmp/oasis-node
+      - name: make oasis-node executable
+        run: chmod +x /tmp/oasis-node
+
+      #- name: Unpack oasis-node
+      #  run: cd /tmp && tar xvf oasis_core_linux_amd64.tar.gz && chmod +x /tmp/oasis-node
 
       - name: Generate a "pre-production" genesis document
         run: GENESIS_OUTPUT_PATH=/tmp/genesis.pre_prod.json STAKING_GENESIS_PATH=/tmp/staking.pre_prod.json python3 .github/scripts/python/generate_genesis.py /tmp/unpack
